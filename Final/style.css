@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background: #565555;
+}
+:root {
+    --goal13: #56C02B;          /* Main Climate Action Green */
+    --goal13-dark: #2E7D1F;     /* Dark shade */
+    --goal13-light: #A6E881;    /* Light eco green */
+    --forest-green: #0B5C28;    /* Deep green accent */
+    --sky-blue: #A8D5FF;        /* Nature sky tone */
+    --earth-brown: #8A6E45;     /* Earth soil tone */
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 0;
+  z-index: 1000;
+  transition: 0.3s ease;
+  background: transparent;
+}
+header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: whitesmoke;
+  font-size: 40px;
+  margin-left: 30px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: -5px;
+}
+.logo:hover {
+  text-decoration: underline;
+  color: #A8D5FF;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-right: 30px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 5px;
+  position: relative;
+  white-space: nowrap;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--goal2);
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: wheat;
+    text-decoration: underline;
+}
+.hamburger {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Active hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+#nav-menu {
+    transition: 0.3s;
+}
+
+#nav-menu.open {
+    right: 0;
+}
+
+.hero{
+      width: 100%;
+    height: 100vh;
+
+    background: url("https://i.pinimg.com/736x/37/cf/dc/37cfdc143df4f3bc0eaac06b9caa77f5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fade-in {
+    animation: fadeIn 1.4s ease;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.content{
+    position: relative;
+    color: white ;
+   
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
+    margin-left: -500px;
+}
+.content h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Goblin One", serif;
+    color: wheat;
+}
+.content p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.btn {
+    padding: 12px 35px;
+    border: 2px solid var(--goal13);
+    border-radius: 15px;
+    background: var(--goal13-light);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
